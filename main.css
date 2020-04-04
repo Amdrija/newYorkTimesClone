@@ -3,6 +3,26 @@
 	margin: 0;
 }
 
+body {
+	font-family: 'Noto Serif', serif;
+	font-size: 20px;
+	color: #333;
+}
+
+a {
+	color: #326891;
+	text-decoration: underline;
+}
+
+/* ! DOESNT WORK */
+/* browsers limit what styles you can apply on visited links 
+and don't allow to change the text decoration of visited links for some reason*/
+a:visited {
+	text-decoration: none;
+}
+
+/** NAVIGATION */
+
 .nav-container {
 	display: grid;
 	grid-template-columns: 240px 200px 200px;
@@ -13,6 +33,9 @@
 	border-bottom: 1px solid #e2e2e2;
 	align-items: center;
 	padding: 0 15px;
+	z-index: 9999;
+	background-color: white;
+	box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 5px 1px;
 }
 
 .nav-left,
@@ -40,13 +63,14 @@
 	color: white;
 	padding: 8px 10px;
 	margin: 0 3px;
-	font-family: Libre Franklin;
+	font-family: 'Libre Franklin', sans-serif;
 	font-weight: 700;
 }
+/** CONTENT */
 
 .subject {
 	display: inline-block;
-	font-family: Libre Franklin;
+	font-family: 'Libre Franklin', sans-serif;
 	font-weight: 700;
 	font-size: 14px;
 }
@@ -56,9 +80,151 @@
 	top: 50px;
 	max-width: 1200px;
 	margin: 0 auto;
-	background-color: blueviolet;
+}
+
+h1 {
+	font-family: 'PT serif', serif;
+	font-size: 40px;
+	color: #121212;
+	font-style: italic;
+}
+
+.content-text {
+	max-width: 600px;
+	margin: 0 auto;
+	padding-bottom: 20px;
+}
+
+/** IMAGES */
+.image-container {
+	padding-bottom: 30px;
 }
 
 img {
-	max-width: 1200px;
+	width: 100%;
+}
+
+.image-caption {
+	font-size: 15px;
+	color: #666;
+}
+
+.image-caption span {
+	color: #888;
+}
+
+/** ARTICLE INFORMATION */
+.author {
+	font-size: 15px;
+	font-family: 'Libre Franklin', sans-serif;
+	font-weight: 700;
+}
+
+.date-social {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 10px 0;
+}
+
+.date {
+	font-size: 13px;
+}
+
+.date-social .icon {
+	margin: 0 5px;
+}
+
+.social {
+	border-radius: 100%;
+	background-color: #eee;
+	padding: 3px;
+}
+
+.bookmark-icon {
+	width: 30px;
+	height: 30px;
+}
+
+/** ARTICLE TEXT */
+
+.content-text p {
+	margin-bottom: 20px;
+	line-height: 30px;
+}
+
+h2 {
+	line-height: 30px;
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+/** CHART */
+
+h3 {
+	font-size: 20px;
+	font-family: 'PT Serif', serif;
+}
+
+.chart-container {
+	max-width: 945px;
+	margin: 0 auto 50px auto;
+}
+
+.chart-caption {
+	font-size: 14px;
+	font-family: 'PT Serif', serif;
+	color: #888;
+}
+
+.chart {
+	background-image: url('https://static01.nyt.com/newsgraphics/2014/03/18/theory-of-inflation/1ebaa1b972edda0f407fbaa0e010f6b50fb6792e/inflation-945.png');
+	background-size: 100%;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(2 1fr);
+}
+
+.chart-text {
+	font-family: 'Libre Franklin', sans-serif;
+	font-size: 13px;
+	line-height: 17px;
+	padding-top: 60%;
+	font-weight: 300;
+	margin: 0 5px;
+}
+
+/** the chart shrinks until this point, and afterwards it the width is fixed.*/
+@media (max-width: 945px) {
+	.chart-container {
+		width: 720px;
+	}
+
+	.chart {
+		background-image: url("https://static01.nyt.com/newsgraphics/2014/03/18/theory-of-inflation/1ebaa1b972edda0f407fbaa0e010f6b50fb6792e/inflation-720.png");
+	}
+
+	.chart-text {
+		padding-top: 65%;
+	}
+}
+
+strong {
+	font-weight: 700;
+	margin-right: 5px;
+}
+
+.line-break {
+	border-top: 1px solid #333;
+	width: 60px;
+	height: 1px;
+	margin: 15px 0;
+}
+
+.chart-author {
+	font-family: 'Libre Franklin', sans-serif;
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: 400;
 }
